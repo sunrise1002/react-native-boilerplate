@@ -2,7 +2,10 @@ import React from 'react';
 
 const BuildComponentTree = (providers: any[]) => {
   if (providers.length === 1) {
-    return providers[0][0];
+    const [P, paramsP] = providers[0];
+    return ({children}: {children: React.ReactNode}) => (
+      <P {...(paramsP || {})}>{children}</P>
+    );
   }
   const [A, paramsA] = providers.shift();
   const [B, paramsB] = providers.shift();

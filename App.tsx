@@ -21,7 +21,7 @@ import {Provider} from 'react-redux';
 import {store} from './src/redux/store';
 import BuildComponentTree from './src/utils/buildComponentTree';
 
-const Providers = BuildComponentTree([Provider, {store}]);
+const Providers = BuildComponentTree([[Provider, {store}]]);
 
 const Section: React.FC<
   PropsWithChildren<{
