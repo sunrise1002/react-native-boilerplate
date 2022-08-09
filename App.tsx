@@ -1,4 +1,4 @@
-import React, {type PropsWithChildren} from 'react';
+import React, {useEffect, type PropsWithChildren} from 'react';
 import {
   SafeAreaView,
   ScrollView,
@@ -18,8 +18,10 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 
 import {Provider} from 'react-redux';
-import {store} from './src/redux/store';
+import {RootState, store} from './src/redux/store';
 import BuildComponentTree from './src/utils/buildComponentTree';
+import { useSelector, useDispatch } from 'react-redux'
+import {getUsers} from '@src/redux/users/users.redux';
 
 const Providers = BuildComponentTree([[Provider, {store}]]);
 
@@ -54,6 +56,13 @@ const Section: React.FC<
 };
 
 const App: React.FC = () => {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getUsers())
+  }, [])
+
+  const users = useSelector((state: RootState) => state.users)
+  console.log('users====>', users)
   const isDarkMode = useColorScheme() === 'dark';
 
   const backgroundStyle = {
@@ -112,4 +121,8 @@ const styles = StyleSheet.create({
   },
 });
 
-export default App;
+export default () => (
+  <Providers>
+    <App />
+  </Providers>
+);

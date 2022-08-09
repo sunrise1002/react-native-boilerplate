@@ -5,9 +5,12 @@
     /* Visit https://aka.ms/tsconfig.json to read more about this file */
     "baseUrl": ".",
     "paths": {
+      "*": ["./*"],
+      "@root/*": ["./*"],
       "@src/*": ["./src/*"],
-      "tests": ["tests/*"],
-      "@components/*": ["src/components/*"],
+      "@components/*": ["./src/components/*"],
+      "@services/*": ["./src/services/*"],
+      "@utils/*": ["./src/utils/*"]
     },
     /* Completeness */
     "skipLibCheck": true                                 /* Skip type checking all .d.ts files. */

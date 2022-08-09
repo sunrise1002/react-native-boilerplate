@@ -1,5 +1,5 @@
 import {API_CONFIG} from '../constants';
-import {getHeader} from '@src/utils/apiServicesUtils';
+import {getHeader} from '@utils/apiServicesUtils';
 import axios from 'axios';
 
 const service = axios.create({
