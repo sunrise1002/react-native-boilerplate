@@ -20,7 +20,7 @@ import {
 import {Provider} from 'react-redux';
 import {RootState, store} from './src/redux/store';
 import BuildComponentTree from './src/utils/buildComponentTree';
-import { useSelector, useDispatch } from 'react-redux'
+import {useSelector, useDispatch} from 'react-redux';
 import {getUsers} from '@src/redux/users/users.redux';
 
 const Providers = BuildComponentTree([[Provider, {store}]]);
@@ -58,11 +58,11 @@ const Section: React.FC<
 const App: React.FC = () => {
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(getUsers())
-  }, [])
+    dispatch(getUsers());
+  }, [dispatch]);
 
-  const users = useSelector((state: RootState) => state.users)
-  console.log('users====>', users)
+  const users = useSelector((state: RootState) => state.users);
+  console.log('users====>', users);
   const isDarkMode = useColorScheme() === 'dark';
 
   const backgroundStyle = {

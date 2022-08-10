@@ -1,4 +1,4 @@
-import {call, put, takeLatest} from 'redux-saga/effects';
+import {put, takeLatest} from 'redux-saga/effects';
 import api from '@services';
 import {apiCall} from '../APISaga';
 import {getUsers, getUsersSuccess} from './users.redux';

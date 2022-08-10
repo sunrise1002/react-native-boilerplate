@@ -9,7 +9,7 @@
       "@root/*": ["./*"],
       "@src/*": ["./src/*"],
       "@components/*": ["./src/components/*"],
-      "@services/*": ["./src/services/*"],
+      "@services": ["./src/services"],
       "@utils/*": ["./src/utils/*"]
     },
     /* Completeness */
