@@ -1,3 +1,4 @@
+import android.os.Bundle;
 package com.basern;
 
 import com.facebook.react.ReactActivity;
@@ -23,6 +24,12 @@ public class MainActivity extends ReactActivity {
   @Override
   protected ReactActivityDelegate createReactActivityDelegate() {
     return new MainActivityDelegate(this, getMainComponentName());
+  }
+
+  // Config for react-native-screens
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(null);
   }
 
   public static class MainActivityDelegate extends ReactActivityDelegate {

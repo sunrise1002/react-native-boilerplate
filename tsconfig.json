@@ -8,9 +8,11 @@
       "*": ["./*"],
       "@root/*": ["./*"],
       "@src/*": ["./src/*"],
-      "@components/*": ["./src/components/*"],
+      "@screens": ["./src/screens"],
       "@services": ["./src/services"],
-      "@utils/*": ["./src/utils/*"]
+      "@utils/*": ["./src/utils/*"],
+      "@navigation/*": ["./src/navigation/*"],
+      "@redux/*": ["./src/redux/*"]
     },
     /* Completeness */
     "skipLibCheck": true                                 /* Skip type checking all .d.ts files. */
